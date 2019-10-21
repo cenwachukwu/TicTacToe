@@ -12,7 +12,7 @@ const box9 = document.querySelector("#box9")
 const reset = document.querySelector(".reset")
 
 let click = 0
-for (let i = 0; i < box.length; i++)
+for (let i = 0; i < box.length; i++) {
     box[i].addEventListener("click", function (evt) {
         evt.preventDefault()
         console.log(evt)
@@ -21,14 +21,18 @@ for (let i = 0; i < box.length; i++)
         }
         if (click % 2 === 1) {
             evt.target.style.backgroundColor = "red"
+
             click += 1
         }
         else if (click % 2 === 0) {
             evt.target.style.backgroundColor = "blue"
             click += 1
         }
-    setTimeout(gameWins,1000)
+    setTimeout(gameWins, 1000)
+
+
 })
+}
 
 reset.addEventListener("click", function(evt){
     evt.preventDefault()
@@ -53,33 +57,27 @@ function gameWins(){
                 box[j].style.backgroundColor = "white"
             }
     }
-    else if ((box1.style.backgroundColor==="red" && box2.style.backgroundColor==="red" && box3.style.backgroundColor==="red")|| 
-        (box4.style.backgroundColor==="red" && box5.style.backgroundColor==="red" && box6.style.backgroundColor==="red")||
-        (box7.style.backgroundColor==="red" && box8.style.backgroundColor==="red" && box9.style.backgroundColor==="red")||
-        (box1.style.backgroundColor==="red" && box5.style.backgroundColor==="red" && box9.style.backgroundColor==="red")||
-        (box3.style.backgroundColor==="red" && box5.style.backgroundColor==="red" && box7.style.backgroundColor==="red")||
-        (box1.style.backgroundColor==="red" && box4.style.backgroundColor==="red" && box7.style.backgroundColor==="red")||
-        (box2.style.backgroundColor==="red" && box5.style.backgroundColor==="red" && box8.style.backgroundColor==="red")||
-        (box3.style.backgroundColor==="red" && box6.style.backgroundColor==="red" && box9.style.backgroundColor==="red")){
-            alert("Red has won the Game")
-            for (let j = 0; j < box.length; j++){
-                box[j].style.backgroundColor = "white"
-    }       }
+    else if ((box1.style.backgroundColor === "red" && box2.style.backgroundColor === "red" && box3.style.backgroundColor === "red") ||
+        (box4.style.backgroundColor === "red" && box5.style.backgroundColor === "red" && box6.style.backgroundColor === "red") ||
+        (box7.style.backgroundColor === "red" && box8.style.backgroundColor === "red" && box9.style.backgroundColor === "red") ||
+        (box1.style.backgroundColor === "red" && box5.style.backgroundColor === "red" && box9.style.backgroundColor === "red") ||
+        (box3.style.backgroundColor === "red" && box5.style.backgroundColor === "red" && box7.style.backgroundColor === "red") ||
+        (box1.style.backgroundColor === "red" && box4.style.backgroundColor === "red" && box7.style.backgroundColor === "red") ||
+        (box2.style.backgroundColor === "red" && box5.style.backgroundColor === "red" && box8.style.backgroundColor === "red") ||
+        (box3.style.backgroundColor === "red" && box6.style.backgroundColor === "red" && box9.style.backgroundColor === "red")) {
+        alert("Red has won the Game")
+        for (let j = 0; j < box.length; j++) {
+            box[j].style.backgroundColor = "white"
+        }
+    }
+    else if (click === 9){
+        alert("There has been a tie")
+        for (let j = 0; j < box.length; j++) {
+        box[j].style.backgroundColor = "white"
+        }
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// var newPara = document.createElement("p");
+// newPara.innerText = "Blue's turn";
+// document.querySelector('.pdiv')
