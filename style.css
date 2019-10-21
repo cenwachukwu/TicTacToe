@@ -1,10 +1,41 @@
+:root {
+    --primary-color: rgba(166, 161, 161, 0.397);
+}
+
 *{
     box-sizing: border-box;
 }
 
+body{
+    text-align: center;
+    background: var(--primary-color);
+    position: relative;
+    font-family: 'Exo 2', sans-serif;
+}
+body:before {
+    content: '';
+    background-color:  rgb(37, 16, 230)no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 h1{
     text-align: center;
+    margin: 50px 0 10px 0;
+    padding: 15px 0;
+    font-size: 55px;
 }
+
+.ptag{
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 200;
+}
+
 .container{
     margin: auto;
     border-color: black;
@@ -26,6 +57,7 @@ h1{
     margin: 0;
     padding: 0;
     border: 2px solid black;
+    background-color: white;
 }
 .box:hover{
     background-color: blanchedalmond;
